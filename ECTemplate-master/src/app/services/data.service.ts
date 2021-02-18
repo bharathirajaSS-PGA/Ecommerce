@@ -46,9 +46,9 @@ export class DataService {
     this.loadShoppingCart();
     forkJoin(this.getAllProductList(), this.getCategoryList()).subscribe((data: any) => {
       this.productList$.next(data[0]);
-      console.log('products:', this.productList$.value);
+      // console.log('products:', this.productList$.value);
       this.categoryList$.next(data[1]);
-      console.log('categories:', this.categoryList$.value);
+      // console.log('categories:', this.categoryList$.value);
       this.setCategoryCount();
       this.getProductListByCategory();
     });

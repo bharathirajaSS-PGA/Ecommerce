@@ -35,5 +35,14 @@
     "name": "About Us",
     "hasChildren": false,
     "redirect": "empty"
+  }, {
+    "name": "Login",
+    "hasChildren": false,
+    "redirect": "login"
+  },
+  {
+    "name": "Register",
+    "hasChildren": false,
+    "redirect": "register"
   }
 ]
