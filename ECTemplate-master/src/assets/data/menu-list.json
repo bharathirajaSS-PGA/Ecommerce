@@ -1,0 +1,39 @@
+[{
+    "name": "Vegetables",
+    "hasChildren": true,
+    "children": [{
+      "name": "Leafy green",
+      "redirect": "Leafy green"
+    }, {
+      "name": "Cruciferous",
+      "redirect": "Cruciferous"
+    }, {
+      "name": "Marrow",
+      "redirect": "Marrow"
+    }, {
+      "name": "Root",
+      "redirect": "Root"
+    }, {
+      "name": "Allium",
+      "redirect": "Allium"
+    }]
+  },
+  {
+    "name": "Menu 2",
+    "hasChildren": false,
+    "redirect": "empty"
+  },
+  {
+    "name": "Menu 3",
+    "hasChildren": false,
+    "redirect": "empty"
+  }, {
+    "name": "Menu 4",
+    "hasChildren": false,
+    "redirect": "empty"
+  }, {
+    "name": "About Us",
+    "hasChildren": false,
+    "redirect": "empty"
+  }
+]
