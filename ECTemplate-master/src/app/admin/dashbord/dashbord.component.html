@@ -1,0 +1,32 @@
+<div class="container">
+  <h3>All Merchant</h3>
+  <div class="table">
+    <table>
+      <tr>
+        <th>Comapny name</th>
+        <th>Contact person</th>
+        <th>Mobile Number</th>
+        <th>Email</th>
+        <th>Username</th>
+        <th>Status</th>
+
+      </tr>
+      <tr *ngFor="let merchant of merchantList">
+        <td>{{merchant.company_name}}</td>
+        <td>{{merchant.contact_person}}</td>
+        <td>{{merchant.mobile_number}}</td>
+        <td>{{merchant.email}}</td>
+        <td>{{merchant.username}}</td>
+        <td>
+          <div *ngIf="merchant.active;else other_content" style="background-color: green;">
+          approved
+          </div>
+      
+          <ng-template #other_content ><div style="background-color: royalblue;" (click)="approveMerchant(merchant)">waiting</div></ng-template>
+        </td>
+
+      </tr>
+     
+    </table>
+  </div>
+</div>

@@ -12,6 +12,7 @@ import { FieldErrorDisplayComponent } from './components/field-error-display/fie
 // Directives
 import { DigitOnlyDirective } from './directives/digit-only.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Role, User } from '../models';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     QuantityInputComponent,
     FieldErrorDisplayComponent,
     // Directives
-    DigitOnlyDirective
+    DigitOnlyDirective,
   ],
   imports: [BrowserModule, BrowserAnimationsModule, PaginationModule.forRoot(), LazyLoadImageModule],
   exports: [
@@ -35,7 +36,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     QuantityInputComponent,
     FieldErrorDisplayComponent,
     // Directives
-    DigitOnlyDirective
+    DigitOnlyDirective,
   ]
 })
 export class SharedModule {}

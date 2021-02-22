@@ -14,6 +14,10 @@ import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SellerComponent } from './admin/seller/seller.component';
 import { ProductsComponent } from './admin/products/products.component';
+import { DashbordComponent } from './admin/dashbord/dashbord.component';
+
+import { AuthGuard } from './guard/auth.guard';
+import { Role } from './models/role';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: FrontPageComponent },
@@ -28,16 +32,22 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent,
+    canActivate: [AuthGuard],
+    data: { roles:["ADMIN"] },
     children: [
-      { path: 'seller', component: SellerComponent },
-      { path: 'products', component: ProductsComponent}
+    //   { path: 'seller', component: SellerComponent ,
+    // },
+    //   { path: 'products', component: ProductsComponent,
+    // },
+    { path: 'dashboard', component: DashbordComponent
+    }
       
     ]
   },
-  { path: 'shopping-cart', component: ShoppingCartComponent },
+  { path: 'shopping-cart', component: ShoppingCartComponent ,canActivate:[AuthGuard]},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
-  { path: 'payment', component: PaymentComponent },
+  { path: 'payment', component: PaymentComponent ,canActivate:[AuthGuard]},
   { path: 'empty', component: EmptyComponent },
   { path: '**', component: NotFoundComponent }
 ];

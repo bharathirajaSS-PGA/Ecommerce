@@ -1,3 +1,62 @@
-<p>
-  register works!
-</p>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="container">
+        <h3>New Customer</h3>
+        <form #f="ngForm" (ngSubmit)="newUserRegister(f.value)">
+          <label for="">Username</label>
+          <input type="text" [(ngModel)]="user.username" name="username" #username="ngModel">
+      
+          <br><label for="">Password</label>
+          <input type="password" [(ngModel)]="user.password" name="password" #password="ngModel">
+          <br><label for="">first name</label>
+          <input type="text" [(ngModel)]="user.first_name" name="first_name" #first_name="ngModel">
+          <br><label for="">last name</label>
+          <input type="text" [(ngModel)]="user.last_name" name="last_name" #last_name="ngModel">
+          <br><label for="">Email</label>
+      
+          <input type="text" [(ngModel)]="user.email" name="email" #email="ngModel">
+          <br><label for="">Mobile number</label>
+          <input type="text" [(ngModel)]="user.mobile_number" name="mobile_number" #mobile_number="ngModel">
+      
+          <br><button type="submit">Register as Customer</button>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="container">
+        <h3>New Merchant</h3>
+
+        <form #f="ngForm" (ngSubmit)="newMerchantRegister(f.value)">
+          <label for="">Company name</label>
+          <input type="text" [(ngModel)]="merchant.company_name" name="company_name" #company_name="ngModel">
+      
+          <br><label for="">Contact Person</label>
+          <input type="text" [(ngModel)]="merchant.contact_person" name="contact_person" #contact_person="ngModel">
+          <br><label for="">address</label>
+          <textarea type="text" [(ngModel)]="merchant.address" name="address" #address="ngModel"></textarea>
+          <br><label for="">Country</label>
+          <input type="text" [(ngModel)]="merchant.country" name="country" #country="ngModel">
+          <br><label for="">State</label>
+          <input type="text" [(ngModel)]="merchant.state" name="state" #state="ngModel">
+          <br><label for="">City</label>
+          <input type="text" [(ngModel)]="merchant.city" name="city" #city="ngModel">
+          <br><label for="">Mobile number</label>
+          <input type="text" [(ngModel)]="merchant.mobile_number" name="mobile_number" #mobile_number="ngModel">
+
+          <br><label for="">Pin Code</label>
+          <input type="text" [(ngModel)]="merchant.pincode" name="pincode" #pincode="ngModel">
+          <br><label for="">Username</label>
+          <input type="text" [(ngModel)]="merchant.username" name="username" #username="ngModel">
+          <br><label for="">Email</label>
+          <input type="text" [(ngModel)]="merchant.email" name="email" #email="ngModel">
+         
+      
+          <br><button type="submit">Register as Merchant</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

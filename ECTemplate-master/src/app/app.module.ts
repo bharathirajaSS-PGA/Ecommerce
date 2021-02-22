@@ -23,6 +23,7 @@ import { PaymentComponent } from './payment/payment.component';
 import { AdminModule } from './admin/admin.module';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,7 @@ import { RegisterComponent } from './auth/register/register.component';
       }
     })
   ],
-  providers: [DataService],
+  providers: [DataService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

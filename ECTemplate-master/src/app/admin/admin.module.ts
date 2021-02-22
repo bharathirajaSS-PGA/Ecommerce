@@ -8,9 +8,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { SellerComponent } from './seller/seller.component';
 import { ProductsComponent } from './products/products.component';
+import { DashbordComponent } from './dashbord/dashbord.component';
 
 @NgModule({
-  declarations: [AdminComponent, SellerComponent, ProductsComponent],
+  declarations: [AdminComponent, SellerComponent, ProductsComponent, DashbordComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
