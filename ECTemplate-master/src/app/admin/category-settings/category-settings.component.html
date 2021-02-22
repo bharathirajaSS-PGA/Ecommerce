@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <label for="">Name</label>
+      <input type="text" name="category_name" id="" [(ngModel)]="category.name">
+      <br>
+      <hr>
+      <button (click)="addNewCategory()" *ngIf="!update">Add</button>
+      <button (click)="updateCategory()" *ngIf="update">Update</button>
+      &nbsp;<button (click)="cancel()" >Cancel</button>
+
+
+    </div>
+    <div class="col-md-6">
+     
+      <div class="container">
+        <h3> All Category List</h3>
+        <div class="table">
+          <table>
+            <tr>
+              <th>Category Name</th>
+              <th>Status</th>
+              <th>Action</th>
+      
+            </tr>
+            <tr *ngFor="let category of all_category">
+              <td>{{category.name}}</td>
+
+      
+              <td>
+                <div *ngIf="category.active;else other_content" style="background-color: green;">
+                active
+                </div>
+            
+                <ng-template #other_content ><div style="background-color: royalblue;" >Inactive</div></ng-template>
+              </td>
+              <td style="cursor: pointer;"><a (click)="editCategory(category)">edit</a> / <a>Delete</a></td>
+      
+            </tr>
+            <div *ngIf="!all_category.length>0"  >
+              <div>Data not found</div>
+            </div>
+           
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

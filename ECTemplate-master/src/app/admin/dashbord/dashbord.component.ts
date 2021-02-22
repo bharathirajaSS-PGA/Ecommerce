@@ -11,6 +11,10 @@ export class DashbordComponent implements OnInit {
   constructor(private mainSer: MainService) { }
   merchantList = [];
   ngOnInit() {
+    this.getAllMerchant();
+  }
+
+  getAllMerchant() {
     this.mainSer.getmerchantList().subscribe(
       res => {
         console.log(res)
@@ -27,6 +31,21 @@ export class DashbordComponent implements OnInit {
     this.mainSer.approveMerchant({user_id:merchant.id}).subscribe(
       (res) => {
         console.log(res)
+        alert("Appoved")
+        this.getAllMerchant();
+
+      },err => {
+        console.log(err)
+      }
+    )
+  }
+
+  rejectMerchant(merchant) {
+    this.mainSer.rejectMerchantDetails({user_id:merchant.id}).subscribe(
+      (res) => {
+        console.log(res["result"])
+        alert(res["result"])
+        this.getAllMerchant();
       },err => {
         console.log(err)
       }

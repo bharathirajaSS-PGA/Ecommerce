@@ -9,14 +9,17 @@ import { RouterModule } from '@angular/router';
 import { SellerComponent } from './seller/seller.component';
 import { ProductsComponent } from './products/products.component';
 import { DashbordComponent } from './dashbord/dashbord.component';
+import {FormsModule} from '@angular/forms';
+import { CategorySettingsComponent } from './category-settings/category-settings.component';
 
 @NgModule({
-  declarations: [AdminComponent, SellerComponent, ProductsComponent, DashbordComponent],
+  declarations: [AdminComponent, SellerComponent, ProductsComponent, DashbordComponent, CategorySettingsComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
     SharedModule,
     BrowserModule,
+    FormsModule,
     RouterModule
   ],
   exports:[

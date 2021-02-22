@@ -38,6 +38,8 @@ export class AuthService {
   // loginUser(data):Observable<any> {
   //   return this.http.post<any>(this.baseUrl+"token/", data)
   // }
+
+  
   loginUser(data) {
     return this.http.post<any>(this.baseUrl+"token/", data)
         .pipe(map(user => {

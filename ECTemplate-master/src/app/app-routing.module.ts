@@ -12,18 +12,16 @@ import { PaymentComponent } from './payment/payment.component';
 import { AdminComponent } from './admin/admin/admin.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
-import { SellerComponent } from './admin/seller/seller.component';
-import { ProductsComponent } from './admin/products/products.component';
 import { DashbordComponent } from './admin/dashbord/dashbord.component';
 
 import { AuthGuard } from './guard/auth.guard';
-import { Role } from './models/role';
-
+import {CategorySettingsComponent} from  './admin/category-settings/category-settings.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: FrontPageComponent },
   {
     path: 'category',
     component: CategoryComponent,
+    canActivate: [AuthGuard],
     children: [
       { path: ':category', component: CategoryListComponent },
       { path: 'product/:id', component: ProductDetailComponent }
@@ -35,21 +33,41 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     data: { roles:["ADMIN"] },
     children: [
-    //   { path: 'seller', component: SellerComponent ,
-    // },
-    //   { path: 'products', component: ProductsComponent,
-    // },
-    { path: 'dashboard', component: DashbordComponent
+    { 
+      path: 'dashboard', 
+      component: DashbordComponent
+    },
+    {
+      path:'category',
+      component: CategorySettingsComponent
     }
-      
     ]
   },
-  { path: 'shopping-cart', component: ShoppingCartComponent ,canActivate:[AuthGuard]},
-  { path: 'login', component: LoginComponent},
-  { path: 'register', component: RegisterComponent},
-  { path: 'payment', component: PaymentComponent ,canActivate:[AuthGuard]},
-  { path: 'empty', component: EmptyComponent },
-  { path: '**', component: NotFoundComponent }
+  { 
+    path: 'shopping-cart', 
+    component: ShoppingCartComponent ,
+    canActivate:[AuthGuard]
+  },
+  { 
+    path: 'login', 
+    component: LoginComponent
+  },
+  { 
+    path: 'register', 
+    component: RegisterComponent
+  },
+  { 
+    path: 'payment', 
+    component: PaymentComponent ,
+    canActivate:[AuthGuard]
+  },
+  { 
+    path: 'empty', 
+    component: EmptyComponent 
+  },
+  { 
+    path: '**', component: NotFoundComponent 
+  }
 ];
 
 @NgModule({

@@ -25,12 +25,16 @@
                     <!-- No SubMenu -->
                     <a *ngIf="!menu.hasChildren && isMerchant"  [routerLink]="[menu.redirect]">{{menu.name}}</a>
                 </li>
+                <li *ngIf="isAdmin"><a [routerLink]="['admin/dashboard']">All Merchants</a></li>
+
+                <li *ngIf="isAdmin"><a [routerLink]="['admin/category']">Category</a></li>
+
+                <li *ngIf="isCustomer"><a>Your Orders</a></li>
                 <li><a [routerLink]="['login']" *ngIf="!authSer.isLoggednIn()">Login</a></li>
                 <li><a [routerLink]="['register']" *ngIf="!authSer.isLoggednIn()">Register</a></li>
                 <li><a [routerLink]="['register']" *ngIf="authSer.isLoggednIn()" (click)="logout()">Logout</a></li>
 
-                <li *ngIf="isAdmin"><a [routerLink]="['admin/dashboard']">Site Admin</a></li>
-                <li *ngIf="isCustomer"><a>Your Orders</a></li>
+               
 
 
                

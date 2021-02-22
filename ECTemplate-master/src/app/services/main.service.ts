@@ -23,7 +23,23 @@ export class MainService {
 
   }
 
-  approveMerchant(merchant) {
-    return this.http.post(this.baseUrl+"merchant-approve/",merchant,{headers:this.headers})
+  approveMerchant(merchant): Observable<any> {
+    return this.http.post<any>(this.baseUrl+"merchant-approve/",merchant,{headers:this.headers})
+  }
+
+  rejectMerchantDetails(merchant): Observable<any> {
+    return this.http.delete<any>(this.baseUrl + "merchant-rejected/" + merchant.user_id + "/",{headers:this.headers})
+  }
+
+  getAllCategory():Observable<any> {
+    return this.http.get<any>(this.baseUrl+"category/",{headers:this.headers})
+  }
+
+  addCategory(category): Observable<any> {
+    return this.http.post<any>(this.baseUrl+"category/",category,{headers:this.headers})
+  }
+
+  editOneCategory(category): Observable<any> {
+    return this.http.put<any>(this.baseUrl+"category/"+category.id+"/",category,{headers:this.headers})
   }
 }

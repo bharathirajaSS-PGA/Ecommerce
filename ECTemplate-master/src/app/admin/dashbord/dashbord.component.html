@@ -9,6 +9,7 @@
         <th>Email</th>
         <th>Username</th>
         <th>Status</th>
+        <th>Action</th>
 
       </tr>
       <tr *ngFor="let merchant of merchantList">
@@ -17,15 +18,20 @@
         <td>{{merchant.mobile_number}}</td>
         <td>{{merchant.email}}</td>
         <td>{{merchant.username}}</td>
+
         <td>
           <div *ngIf="merchant.active;else other_content" style="background-color: green;">
           approved
           </div>
       
-          <ng-template #other_content ><div style="background-color: royalblue;" (click)="approveMerchant(merchant)">waiting</div></ng-template>
+          <ng-template #other_content ><div style="background-color: royalblue;" >waiting</div></ng-template>
         </td>
+        <td style="cursor: pointer;"><a (click)="approveMerchant(merchant)">Accept</a> / <a (click)="rejectMerchant(merchant)">Reject</a></td>
 
       </tr>
+      <div *ngIf="!merchantList.length>0"  >
+        <div>Data not found</div>
+      </div>
      
     </table>
   </div>
